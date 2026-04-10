@@ -10,6 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "pandas",
+    "pyarrow>=23.0.1",
     "tyro",
 ]
 
