@@ -23,12 +23,11 @@ def load_df(path: Path) -> pd.DataFrame:
         return pd.read_parquet(path)
     raise ValueError(f"Unsupported file type: {path.suffix}")
 
-
-def save_df(df: pd.DataFrame, path: Path) -> None:
+def save_df(df: pd.DataFrame, path: Path, *, save_index: bool) -> None:
     if path.suffix == ".csv":
-        df.to_csv(path, index=False)
+        df.to_csv(path, index=save_index)
     elif path.suffix in {".parquet", ".pq"}:
-        df.to_parquet(path, index=False)
+        df.to_parquet(path, index=save_index)
     else:
         raise ValueError(f"Unsupported file type: {path.suffix}")
 
