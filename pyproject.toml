@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jscript"
+version = "0.1.0"
+description = "Utilities for working with data files and project-level scripts."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas",
+    "tyro",
+]
+
+[project.scripts]
+fix-tasks = "jscript.fix_tasks:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jscript"]
