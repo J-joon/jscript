@@ -16,6 +16,7 @@ dependencies = [
 
 [project.scripts]
 fix-tasks = "jscript.fix_tasks:main"
+print-tasks = "jscript.print_tasks:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/jscript"]
